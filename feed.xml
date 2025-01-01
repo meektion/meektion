@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/meektion/meektion.github.io</id><title>RSS feed of meektion's meektion.github.io</title><updated>2025-01-01T07:05:55.514042+00:00</updated><link href="https://github.com/meektion/meektion.github.io"/><link href="https://raw.githubusercontent.com/meektion/meektion.github.io/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/meektion/meektion.github.io/issues/11</id><title>MarkItDown is a utility for converting various files to Markdown</title><updated>2025-01-01T07:05:55.749796+00:00</updated><content type="html"><![CDATA[<blockquote>
+<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/meektion/meektion.github.io</id><title>RSS feed of meektion's meektion.github.io</title><updated>2025-01-01T07:33:58.023964+00:00</updated><link href="https://github.com/meektion/meektion.github.io"/><link href="https://raw.githubusercontent.com/meektion/meektion.github.io/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/meektion/meektion.github.io/issues/14</id><title>MarkItDown</title><updated>2025-01-01T07:33:58.215809+00:00</updated><content type="html"><![CDATA[<blockquote>
 <p>[!IMPORTANT]
 (12/19/24) Hello! MarkItDown team members will be resting and recharging with family and friends over the holiday period. Activity/responses on the project may be delayed during the period of Dec 21-Jan 06. We will be excited to engage with you in the new year!</p>
 </blockquote>
@@ -129,138 +129,14 @@ hatch test
 hatch test
 </code></pre>
 </li>
-<li>
-<p>Run pre-commit checks before submitting a PR: <code>pre-commit run --all-files</code></p>
-</li>
 </ul>
-]]></content><link href="https://github.com/meektion/meektion.github.io/issues/11"/><category term="一些记录"/><published>2025-01-01T07:05:30+00:00</published></entry><entry><id>https://github.com/meektion/meektion.github.io/issues/10</id><title>Windows 3.1 时钟，看上去很有怀旧感</title><updated>2025-01-01T07:05:55.873470+00:00</updated><content type="html"><![CDATA[<p><img src="https://pic.superbed.cc/item/6774e7d3fa9f77b4dc6e5cc2.png" alt="" /></p>
-<p>上图的钟面不是液晶屏，而是印刷上去的。它是石英钟，使用一节五号电池。</p>
-<p><img src="https://pic.superbed.cc/item/6774e7f6fa9f77b4dc6e5e1f.png" alt="" /></p>
-<p>当然，您可以选择自己制作一个。</p>
-]]></content><link href="https://github.com/meektion/meektion.github.io/issues/10"/><category term="一些记录"/><category term="摘要"/><published>2025-01-01T07:02:01+00:00</published></entry><entry><id>https://github.com/meektion/meektion.github.io/issues/9</id><title>Moments的开源项目 - 极简朋友圈</title><updated>2025-01-01T07:05:55.996022+00:00</updated><content type="html"><![CDATA[<h1>Moments - 极简朋友圈</h1>
-<p><a href="https://github.com/kingwrcy/moments/releases"><img src="https://img.shields.io/badge/release-%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95-blue" alt="release" /></a>
-<a href="https://github.com/kingwrcy/moments/actions/workflows/docker-image-release.yml"><img src="https://img.shields.io/github/actions/workflow/status/kingwrcy/moments/docker-image-release.yml" alt="docker-release-status" /></a>
-<a href="https://hub.docker.com/repository/docker/kingwrcy/moments"><img src="https://img.shields.io/docker/pulls/kingwrcy/moments" alt="docker-pull" /></a>
-<a href="https://t.me/simple_moments"><img src="https://img.shields.io/badge/Telegram-group-blue" alt="telegram-group" /></a>
-<a href="https://discussion.mblog.club"><img src="https://img.shields.io/badge/moments-%E8%AE%BA%E5%9D%9B-blue" alt="discussion" /></a></p>
-<p>从 v0.2.1 开始，使用 Golang 重写了服务端, 目前已经基本实现了 0.2.0 版本的功能，同时软件包体积也更小了。</p>
-<p>注意：如果你在找 v0.2.0 版本，请 <a href="https://github.com/kingwrcy/moments/blob/master/README.md">点击这里</a>。</p>
-<h1>功能列表</h1>
-<ul>
-<li>默认用户名和密码是 admin/a123456，登录后可以在后台修改</li>
-<li>多用户模式，后台可以自由开启是否运行注册多用户</li>
-<li>标签的定义，以 # 号开头，空格 / 空行结尾的中间的部分会被认为是标签</li>
-<li>在 memo 发言的输入框里点击右键可以选择标签来插入</li>
-<li>支持完整的 Markdown，但是目前样式只适配了常用的几个标签，更多的待接下来完善</li>
-<li>代码块支持一键复制按钮</li>
-<li>支持回到顶部按钮，PC 端和手机端都有</li>
-</ul>
-<p>更多说明可以<a href="https://discussion.mblog.club/post/pto2hqoFzDKzZMpvoPZKYuP">点击这里查看</a>。</p>
-<h1>使用教程</h1>
-<h2>环境变量</h2>
-<p>Moments 支持以下环境变量，可按需修改进行配置：</p>
-<table>
-<thead>
-<tr>
-<th>变量名</th>
-<th>解释</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>PORT</td>
-<td>监听端口</td>
-<td>3000</td>
-</tr>
-<tr>
-<td>JWT_KEY</td>
-<td>JWT 密钥</td>
-<td>不填写则每次启动时随机生成，每次重启后需要重新登录</td>
-</tr>
-<tr>
-<td>DB</td>
-<td>sqlite 数据库存放目录</td>
-<td>工作目录下的 db.sqlite，/app/data/db.sqlite</td>
-</tr>
-<tr>
-<td>UPLOAD_DIR</td>
-<td>上传文件本地目录</td>
-<td>工作目录下的 upload，/app/data/upload</td>
-</tr>
-<tr>
-<td>LOG_LEVEL</td>
-<td>日志级别</td>
-<td>info，可选 debug</td>
-</tr>
-<tr>
-<td>ENABLE_SWAGGER</td>
-<td>是否启用 swagger 文档</td>
-<td>false，可选 true，启用后可访问路径 /swagger/index.html</td>
-</tr>
-<tr>
-<td>ENABLE_SQL_OUTPUT</td>
-<td>是否启用 SQL 调试日志</td>
-<td>false</td>
-</tr>
-</tbody></table><h2>使用 Docker</h2>
-<p>注意：需要将以下示例中的 $JWT_KEY 替换为你的真实 JWT_KEY，生成方式可<a href="#jwt_key-%E7%94%9F%E6%88%90">参考这里</a>。</p>
-<p>使用命令行启动容器：</p>
-<pre><code class="language-bash">docker run -d \
-  -e PORT=3000 \
-  -e JWT_KEY=$JWT_KEY \
-  -p 3000:3000 \
-  -v /var/moments:/app/data \
-  --name moments \
-  kingwrcy/moments:latest
-</code></pre>
-<p>也可以使用 Docker Compose:</p>
-<pre><code class="language-yaml">services:
-  moments:
-    image: kingwrcy/moments:latest
-    container_name: moments
-    restart: always
-    environment:
-      PORT: 3000
-      JWT_KEY: $JWT_KEY
-    ports:
-      - 3000:3000
-    volumes:
-      - /var/moments:/app/data
-</code></pre>
-<h2>使用二进制文件</h2>
-<p>待补充</p>
-<h2>JWT_KEY 生成</h2>
-<h3>使用 OpenSSL</h3>
-<p>执行以下命令生成 (仅测试了 Linux)：</p>
-<pre><code class="language-bash">openssl rand -hex 32
-</code></pre>
-<h3>使用 SHA256</h3>
-<p>执行以下命令生成 (仅测试了 Linux)：</p>
-<pre><code class="language-bash">echo $RANDOM | sha256sum
-</code></pre>
-<h3>在线生成</h3>
-<p>打开 <a href="https://tool.lu/uuid">https://tool.lu/uuid</a> 生成不带 <code>-</code> 的 UUID 作为 JWT_KEY。</p>
-<h1>其他版本</h1>
-<table>
-<thead>
-<tr>
-<th>项目</th>
-<th>演示地址</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://github.com/RandallAnjie/moments">RandallAnjie/moments</a></td>
-<td><a href="https://moments.randallanjie.com">https://moments.randallanjie.com</a></td>
-</tr>
-</tbody></table>]]></content><link href="https://github.com/meektion/meektion.github.io/issues/9"/><category term="一些记录"/><published>2025-01-01T06:50:46+00:00</published></entry><entry><id>https://github.com/meektion/meektion.github.io/issues/8</id><title>2024年的最后一个月,我做了痔疮手术</title><updated>2025-01-01T07:05:56.114167+00:00</updated><content type="html"><![CDATA[<p>2024年的最后一个月,我做了痔疮手术,因为已经形成血栓了，所以不做不行了。</p>
+]]></content><link href="https://github.com/meektion/meektion.github.io/issues/14"/><category term="一些记录"/><published>2025-01-01T07:33:36+00:00</published></entry><entry><id>https://github.com/meektion/meektion.github.io/issues/8</id><title>2024年的最后一个月,我做了痔疮手术</title><updated>2025-01-01T07:33:58.327539+00:00</updated><content type="html"><![CDATA[<p>2024年的最后一个月,我做了痔疮手术,因为已经形成血栓了，所以不做不行了。</p>
 <p>现在已经将近20天了，但是伤口还没有长好，所以还没有上班。这几个月因为没上班的缘故，所以收入肯定会巨减。</p>
 <p>刚做的两天没有感觉有点疼痛，因为有麻药的作用。两天之后就开始疼痛，然后大便就跟拉玻璃一样。</p>
 <p>然后当时选的医院有点小，只是个二级医院，可能有选择的余地也比较少,所以就选了一个最原始的一个方法。现在想想,可能这个原始的方法是最去根的方法。但是也是最痛苦的一个方法。</p>
 <p>直到20天以后，我还在。床上躺着上不了班。现在s是每天早上大便，然后紧接着去洗去熏。</p>
 <p>期待着2025年。一切顺利吧。</p>
-]]></content><link href="https://github.com/meektion/meektion.github.io/issues/8"/><category term="2025"/><category term="生活"/><category term="一些记录"/><published>2025-01-01T06:33:33+00:00</published></entry><entry><id>https://github.com/meektion/meektion.github.io/issues/7</id><title>2025 新年快乐</title><updated>2025-01-01T07:05:56.230995+00:00</updated><content type="html"><![CDATA[<p>新年快乐，心想事成.</p>
+]]></content><link href="https://github.com/meektion/meektion.github.io/issues/8"/><category term="2025"/><category term="生活"/><category term="一些记录"/><published>2025-01-01T06:33:33+00:00</published></entry><entry><id>https://github.com/meektion/meektion.github.io/issues/7</id><title>2025 新年快乐</title><updated>2025-01-01T07:33:58.418511+00:00</updated><content type="html"><![CDATA[<p>新年快乐，心想事成.</p>
 <p><img src="https://pic.superbed.cc/item/6774da33fa9f77b4dc6ded97.jpg" alt="" /></p>
 <p>在网上想看个文章，结果就是不登录就能看几行。</p>
 <p>在朋友圈发个牢骚，结果就是一会儿就有亲朋好友打电话来问情况。</p>
