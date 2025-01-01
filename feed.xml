@@ -1,12 +1,142 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/meektion/meektion.github.io</id><title>RSS feed of meektion's meektion.github.io</title><updated>2025-01-01T07:44:49.758186+00:00</updated><link href="https://github.com/meektion/meektion.github.io"/><link href="https://raw.githubusercontent.com/meektion/meektion.github.io/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/meektion/meektion.github.io/issues/15</id><title>1</title><updated>2025-01-01T07:44:49.943150+00:00</updated><content type="html"><![CDATA[<p>1</p>
-]]></content><link href="https://github.com/meektion/meektion.github.io/issues/15"/><category term="2025"/><published>2025-01-01T07:39:30+00:00</published></entry><entry><id>https://github.com/meektion/meektion.github.io/issues/8</id><title>2024年的最后一个月,我做了痔疮手术</title><updated>2025-01-01T07:44:50.045224+00:00</updated><content type="html"><![CDATA[<p>2024年的最后一个月,我做了痔疮手术,因为已经形成血栓了，所以不做不行了。</p>
+<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/meektion/meektion.github.io</id><title>RSS feed of meektion's meektion.github.io</title><updated>2025-01-01T07:46:17.730728+00:00</updated><link href="https://github.com/meektion/meektion.github.io"/><link href="https://raw.githubusercontent.com/meektion/meektion.github.io/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/meektion/meektion.github.io/issues/16</id><title>MarkItDown is a utility for converting various files to Markdown </title><updated>2025-01-01T07:46:17.935018+00:00</updated><content type="html"><![CDATA[<blockquote>
+<p>[!IMPORTANT]
+(12/19/24) Hello! MarkItDown team members will be resting and recharging with family and friends over the holiday period. Activity/responses on the project may be delayed during the period of Dec 21-Jan 06. We will be excited to engage with you in the new year!</p>
+</blockquote>
+<h1>MarkItDown</h1>
+<p><a href="https://pypi.org/project/markitdown/"><img src="https://img.shields.io/pypi/v/markitdown.svg" alt="PyPI" /></a>
+<img src="https://img.shields.io/pypi/dd/markitdown" alt="PyPI - Downloads" />
+<a href="https://github.com/microsoft/autogen"><img src="https://img.shields.io/badge/Built%20by-AutoGen%20Team-blue" alt="Built by AutoGen Team" /></a></p>
+<p>MarkItDown is a utility for converting various files to Markdown (e.g., for indexing, text analysis, etc).
+It supports:</p>
+<ul>
+<li>PDF</li>
+<li>PowerPoint</li>
+<li>Word</li>
+<li>Excel</li>
+<li>Images (EXIF metadata and OCR)</li>
+<li>Audio (EXIF metadata and speech transcription)</li>
+<li>HTML</li>
+<li>Text-based formats (CSV, JSON, XML)</li>
+<li>ZIP files (iterates over contents)</li>
+</ul>
+<p>To install MarkItDown, use pip: <code>pip install markitdown</code>. Alternatively, you can install it from the source: <code>pip install -e .</code></p>
+<h2>Usage</h2>
+<h3>Command-Line</h3>
+<pre><code class="language-bash">markitdown path-to-file.pdf &gt; document.md
+</code></pre>
+<p>Or use <code>-o</code> to specify the output file:</p>
+<pre><code class="language-bash">markitdown path-to-file.pdf -o document.md
+</code></pre>
+<p>You can also pipe content:</p>
+<pre><code class="language-bash">cat path-to-file.pdf | markitdown
+</code></pre>
+<h3>Python API</h3>
+<p>Basic usage in Python:</p>
+<pre><code class="language-python">from markitdown import MarkItDown
+
+md = MarkItDown()
+result = md.convert(&quot;test.xlsx&quot;)
+print(result.text_content)
+</code></pre>
+<p>To use Large Language Models for image descriptions, provide <code>llm_client</code> and <code>llm_model</code>:</p>
+<pre><code class="language-python">from markitdown import MarkItDown
+from openai import OpenAI
+
+client = OpenAI()
+md = MarkItDown(llm_client=client, llm_model=&quot;gpt-4o&quot;)
+result = md.convert(&quot;example.jpg&quot;)
+print(result.text_content)
+</code></pre>
+<h3>Docker</h3>
+<pre><code class="language-sh">docker build -t markitdown:latest .
+docker run --rm -i markitdown:latest &lt; ~/your-file.pdf &gt; output.md
+</code></pre>
+<details>
+<summary>Batch Processing Multiple Files</summary>
+<p>This example shows how to convert multiple files to markdown format in a single run. The script processes all supported files in a directory and creates corresponding markdown files.</p>
+<pre><code class="language-python">from markitdown import MarkItDown
+from openai import OpenAI
+import os
+client = OpenAI(api_key=&quot;your-api-key-here&quot;)
+md = MarkItDown(llm_client=client, llm_model=&quot;gpt-4o-2024-11-20&quot;)
+supported_extensions = (&#x27;.pptx&#x27;, &#x27;.docx&#x27;, &#x27;.pdf&#x27;, &#x27;.jpg&#x27;, &#x27;.jpeg&#x27;, &#x27;.png&#x27;)
+files_to_convert = [f for f in os.listdir(&#x27;.&#x27;) if f.lower().endswith(supported_extensions)]
+for file in files_to_convert:
+    print(f&quot;\nConverting {file}...&quot;)
+    try:
+        md_file = os.path.splitext(file)[0] + &#x27;.md&#x27;
+        result = md.convert(file)
+        with open(md_file, &#x27;w&#x27;) as f:
+            f.write(result.text_content)
+        
+        print(f&quot;Successfully converted {file} to {md_file}&quot;)
+    except Exception as e:
+        print(f&quot;Error converting {file}: {str(e)}&quot;)
+
+print(&quot;\nAll conversions completed!&quot;)
+</code></pre>
+<ol start="2">
+<li>Place the script in the same directory as your files</li>
+<li>Install required packages: like openai</li>
+<li>Run script <code>bash python convert.py </code></li>
+</ol>
+<p>Note that original files will remain unchanged and new markdown files are created with the same base name.</p>
+</details>
+<h2>Contributing</h2>
+<p>This project welcomes contributions and suggestions.  Most contributions require you to agree to a
+Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
+the rights to use your contribution. For details, visit <a href="https://cla.opensource.microsoft.com">https://cla.opensource.microsoft.com</a>.</p>
+<p>When you submit a pull request, a CLA bot will automatically determine whether you need to provide
+a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
+provided by the bot. You will only need to do this once across all repos using our CLA.</p>
+<p>This project has adopted the <a href="https://opensource.microsoft.com/codeofconduct/">Microsoft Open Source Code of Conduct</a>.
+For more information see the <a href="https://opensource.microsoft.com/codeofconduct/faq/">Code of Conduct FAQ</a> or
+contact <a href="mailto:opencode@microsoft.com">opencode@microsoft.com</a> with any additional questions or comments.</p>
+<h3>How to Contribute</h3>
+<p>You can help by looking at issues or helping review PRs. Any issue or PR is welcome, but we have also marked some as 'open for contribution' and 'open for reviewing' to help facilitate community contributions. These are ofcourse just suggestions and you are welcome to contribute in any way you like.</p>
+<div align="center">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>All</th>
+<th>Especially Needs Help from Community</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Issues</strong></td>
+<td><a href="https://github.com/microsoft/markitdown/issues">All Issues</a></td>
+<td><a href="https://github.com/microsoft/markitdown/issues?q=is%3Aissue+is%3Aopen+label%3A%22open+for+contribution%22">Issues open for contribution</a></td>
+</tr>
+<tr>
+<td><strong>PRs</strong></td>
+<td><a href="https://github.com/microsoft/markitdown/pulls">All PRs</a></td>
+<td><a href="https://github.com/microsoft/markitdown/pulls?q=is%3Apr+is%3Aopen+label%3A%22open+for+reviewing%22">PRs open for reviewing</a></td>
+</tr>
+</tbody></table></div>
+<h3>Running Tests and Checks</h3>
+<ul>
+<li>
+<p>Install <code>hatch</code> in your environment and run tests:</p>
+<pre><code class="language-sh">pip install hatch  # Other ways of installing hatch: https://hatch.pypa.io/dev/install/
+hatch shell
+hatch test
+</code></pre>
+<p>(Alternative) Use the Devcontainer which has all the dependencies installed:</p>
+<pre><code class="language-sh"># Reopen the project in Devcontainer and run:
+hatch test
+</code></pre>
+</li>
+</ul>
+]]></content><link href="https://github.com/meektion/meektion.github.io/issues/16"/><category term="一些记录"/><published>2025-01-01T07:45:47+00:00</published></entry><entry><id>https://github.com/meektion/meektion.github.io/issues/8</id><title>2024年的最后一个月,我做了痔疮手术</title><updated>2025-01-01T07:46:18.057749+00:00</updated><content type="html"><![CDATA[<p>2024年的最后一个月,我做了痔疮手术,因为已经形成血栓了，所以不做不行了。</p>
 <p>现在已经将近20天了，但是伤口还没有长好，所以还没有上班。这几个月因为没上班的缘故，所以收入肯定会巨减。</p>
 <p>刚做的两天没有感觉有点疼痛，因为有麻药的作用。两天之后就开始疼痛，然后大便就跟拉玻璃一样。</p>
 <p>然后当时选的医院有点小，只是个二级医院，可能有选择的余地也比较少,所以就选了一个最原始的一个方法。现在想想,可能这个原始的方法是最去根的方法。但是也是最痛苦的一个方法。</p>
 <p>直到20天以后，我还在。床上躺着上不了班。现在s是每天早上大便，然后紧接着去洗去熏。</p>
 <p>期待着2025年。一切顺利吧。</p>
-]]></content><link href="https://github.com/meektion/meektion.github.io/issues/8"/><category term="2025"/><category term="生活"/><category term="一些记录"/><published>2025-01-01T06:33:33+00:00</published></entry><entry><id>https://github.com/meektion/meektion.github.io/issues/7</id><title>2025 新年快乐</title><updated>2025-01-01T07:44:50.149337+00:00</updated><content type="html"><![CDATA[<p>新年快乐，心想事成.</p>
+]]></content><link href="https://github.com/meektion/meektion.github.io/issues/8"/><category term="2025"/><category term="生活"/><category term="一些记录"/><published>2025-01-01T06:33:33+00:00</published></entry><entry><id>https://github.com/meektion/meektion.github.io/issues/7</id><title>2025 新年快乐</title><updated>2025-01-01T07:46:18.170862+00:00</updated><content type="html"><![CDATA[<p>新年快乐，心想事成.</p>
 <p><img src="https://pic.superbed.cc/item/6774da33fa9f77b4dc6ded97.jpg" alt="" /></p>
 <p>在网上想看个文章，结果就是不登录就能看几行。</p>
 <p>在朋友圈发个牢骚，结果就是一会儿就有亲朋好友打电话来问情况。</p>
