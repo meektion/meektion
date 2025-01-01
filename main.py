@@ -9,8 +9,8 @@ from github import Github
 from lxml.etree import CDATA
 from marko.ext.gfm import gfm as marko
 
-MD_HEAD = """## [Gitblog](https://meektion.github.io/)
-My personal blog([About Me](https://github.com/ymeektion/meektion.githun.io/issues/10)) using issues and GitHub Actions (随意转载，无需署名)
+MD_HEAD = """## [meektion](https://meektion.github.io/)
+My personal blog([About Me](https://github.com/meektion/meektion.githun.io/issues/10)) using issues and GitHub Actions (随意转载，无需署名)
 [RSS Feed](https://raw.githubusercontent.com/{repo_name}/master/feed.xml)
 """
 
