@@ -3,6 +3,6 @@ My personal blog([About Me](https://github.com/meektion/meektion.githun.io/issue
 [RSS Feed](https://raw.githubusercontent.com/meektion/meektion.github.io/master/feed.xml)
 
 ## 最近更新
-- [2025 新年快乐](https://github.com/meektion/meektion.github.io/issues/5)--2025-01-01
+- [2025 新年快乐](https://github.com/meektion/meektion.github.io/issues/6)--2025-01-01
 ## 2025
-- [2025 新年快乐](https://github.com/meektion/meektion.github.io/issues/5)--2025-01-01
+- [2025 新年快乐](https://github.com/meektion/meektion.github.io/issues/6)--2025-01-01
