@@ -1,4 +1,4 @@
-name: Generate meektion README
+name: Generate GitBlog README
 
 on:
   workflow_dispatch:
@@ -8,7 +8,7 @@ on:
     types: [created, edited]
   push:
     branches:
-      - main
+      - master
     paths:
       - main.py
 
@@ -37,7 +37,7 @@ jobs:
       - name: Generate new md
         run: |
           source venv/bin/activate
-          python main.py ${{ secrets.G_KEY }} ${{ github.repository }} --issue_number '${{ github.event.issue.number }}'
+          python main.py ${{ secrets.G_T }} ${{ github.repository }} --issue_number '${{ github.event.issue.number }}'
 
       - name: Push README
         run: |
